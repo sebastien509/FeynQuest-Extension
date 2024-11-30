@@ -9,13 +9,18 @@
   "categories": [
     "Other"
   ],
-  "activationEvents": [],
+  "activationEvents": [
+    "onLanguage:javascript"
+  ],
   "main": "./extension.js",
   "contributes": {
-    "commands": [{
-      "command": "feynquest.helloWorld",
-      "title": "Hello World"
-    }]
+    "commands": [
+      {
+        "command": "feynquest.Ask",
+        "title": "FQ code suggestions",
+        "category": "AI Helper"
+      }
+    ]
   },
   "scripts": {
     "lint": "eslint .",
@@ -23,11 +28,17 @@
     "test": "vscode-test"
   },
   "devDependencies": {
-    "@types/vscode": "^1.95.0",
     "@types/mocha": "^10.0.9",
     "@types/node": "20.x",
-    "eslint": "^9.13.0",
+    "@types/vscode": "^1.95.0",
     "@vscode/test-cli": "^0.0.10",
-    "@vscode/test-electron": "^2.4.1"
+    "@vscode/test-electron": "^2.4.1",
+    "eslint": "^9.13.0"
+  },
+  "dependencies": {
+    "ai": "^4.0.9",
+    "dotenv": "^16.4.5",
+    "open": "^10.1.0",
+    "openai": "^4.73.1"
   }
 }
