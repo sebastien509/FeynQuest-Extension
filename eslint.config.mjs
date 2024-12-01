@@ -1,25 +1,12 @@
-import globals from "globals";
-
-export default [{
-    files: ["**/*.js"],
-    languageOptions: {
-        globals: {
-            ...globals.commonjs,
-            ...globals.node,
-            ...globals.mocha,
-        },
-
-        ecmaVersion: 2022,
-        sourceType: "module",
+module.exports = {
+    env: {
+        node: true, // Node.js environment
+        es2022: true // ECMAScript 2022
     },
-
+    extends: ["eslint:recommended"],
     rules: {
-        "no-const-assign": "warn",
-        "no-this-before-super": "warn",
-        "no-undef": "warn",
-        "no-unreachable": "warn",
         "no-unused-vars": "warn",
-        "constructor-super": "warn",
-        "valid-typeof": "warn",
-    },
-}];
+        "no-console": "off",
+        "no-undef": "error"
+    }
+};

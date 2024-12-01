@@ -1,44 +1,28 @@
 {
   "name": "feynquest",
   "displayName": "FeynQuest",
-  "description": "AI Based extansion abkle to give you multiple suggestions from line or Blocks of codes inatantly .",
+  "description": "Solve JavaScript coding with AI-powered suggestions.",
   "version": "0.0.1",
   "engines": {
-    "vscode": "^1.95.0"
+    "vscode": "^1.75.0"
   },
-  "categories": [
-    "Other"
-  ],
-  "activationEvents": [
-    "onLanguage:javascript"
-  ],
   "main": "./extension.js",
+  "scripts": {
+    "lint": "eslint ."
+  },
   "contributes": {
     "commands": [
       {
-        "command": "feynquest.Ask",
-        "title": "FQ code suggestions",
-        "category": "AI Helper"
+        "command": "feynquest.ask",
+        "title": "Ask FeynQuest"
       }
     ]
   },
-  "scripts": {
-    "lint": "eslint .",
-    "pretest": "npm run lint",
-    "test": "vscode-test"
-  },
   "devDependencies": {
-    "@types/mocha": "^10.0.9",
-    "@types/node": "20.x",
-    "@types/vscode": "^1.95.0",
-    "@vscode/test-cli": "^0.0.10",
-    "@vscode/test-electron": "^2.4.1",
-    "eslint": "^9.13.0"
+    "dotenv": "^16.4.5",
+    "eslint": "^8.50.0"
   },
   "dependencies": {
-    "ai": "^4.0.9",
-    "dotenv": "^16.4.5",
-    "open": "^10.1.0",
     "openai": "^4.73.1"
   }
 }
