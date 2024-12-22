@@ -7,6 +7,8 @@ const openai = new OpenAI({
     apiKey: process.env.OPENAI_API_KEY,  // Access the API key from environment variables
 });
 
+
+
 // Function to fetch code suggestions from OpenAI
 async function fetchCodeSuggestions(commentText, contextText) {
     const apiKey = process.env.OPENAI_API_KEY;
@@ -19,12 +21,16 @@ async function fetchCodeSuggestions(commentText, contextText) {
         const response = await openai.chat.completions.create({
             model: "gpt-3.5-turbo", // Ensure the model is correct
             messages: [
-                { role: "system", content: "You are a code assistant that provides complete JavaScript code blocks based on the given context. Always return valid code wrapped in a single suggestion box." },
-                { role: "user", content: `Here is the context:\n${contextText}\n\nAnd here is the task:\n${commentText} , 
-                1 - if there are no errors in the code prompt do not repeat codes in ${contextText} only write the following codes needed.
-                2 - if there` },
+                { role: "system", content: " software engineering expert assistant" },
+                { role: "user", content:  ` The task:\n${commentText}.     Current code in the file: \n${contextText}\n\n . 
+
+                response fromat: 
+                1-***- Code responses Only.- no intro sentence- do not repeat prompt - no texts responses 
+                2- write an updated sets of codes without the errors and respond to the task. 
+                3-identify coding error first in the "Current code" if there are errors or syntax errors in the ${contextText}, 
+                4- Always add a comment at the end explaining the codes rendered and stating the changes if applicable` },
             ],
-            max_tokens: 300, // Allow for larger responses
+            max_tokens: 1000, // Allow for larger responses
             temperature: 0.7,
         });
 
@@ -39,7 +45,7 @@ async function fetchCodeSuggestions(commentText, contextText) {
 // Function to show code suggestions
 async function showCodeSuggestions(suggestions) {
     if (suggestions.length === 0) {
-        vscode.window.showInformationMessage('No code suggestions available.');
+        vscode.window.showInformationMessage('No suggestions available from FEYNQUEST.');
         return;
     }
 
@@ -51,7 +57,7 @@ async function showCodeSuggestions(suggestions) {
 
     // Show the cleaned suggestions in a QuickPick UI
     const selection = await vscode.window.showQuickPick(cleanedSuggestions, {
-        placeHolder: 'Select a code suggestion to insert',
+        placeHolder: 'FEYNQUEST Suggestion',
     });
 
     if (selection) {
@@ -75,7 +81,7 @@ function activate(context) {
         if (!editor) return; // Exit if no active editor
 
         const position = editor.selection.active;
-        const contextText = await getContextText(editor, position, 12); // Grab 12 lines above the current line for context
+        const contextText = await getContextText(editor, position, 100); // Grab 12 lines above the current line for context
         const commentText = editor.document.lineAt(position.line).text; // Only take the current line (comment or code)
 
         // Send contextText and commentText to fetch code suggestions
@@ -95,7 +101,7 @@ async function getContextText(editor, position, numLines) {
 }
 
 function deactivate() {
-    console.log("Extension has been deactivated.");
+    console.log("FEYNQUEST has been deactivated.");
 }
 
 module.exports = {

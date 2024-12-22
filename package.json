@@ -1,8 +1,10 @@
 {
-  "name": "feynquest",
+  "name": "feynquest-ext",
   "displayName": "FeynQuest",
-  "description": "Solve JavaScript coding with AI-powered suggestions.",
-  "version": "0.0.1",
+  "description": "Your Ai coding Assistant",
+  "version": "0.1.0",
+  "publisher": "S.F.",
+  "icon": "logo.png",
   "engines": {
     "vscode": "^1.75.0"
   },
@@ -10,11 +12,14 @@
   "scripts": {
     "lint": "eslint ."
   },
+  "activationEvents": [
+    "onCommand:feynquest.ask"
+  ],
   "contributes": {
     "commands": [
       {
         "command": "feynquest.ask",
-        "title": "Ask FeynQuest"
+        "title": "AskFeynQuest"
       }
     ]
   },
@@ -24,5 +29,9 @@
   },
   "dependencies": {
     "openai": "^4.73.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sebastien509/FeynQuest-Extension"
   }
 }
