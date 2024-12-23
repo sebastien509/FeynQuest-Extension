@@ -3,7 +3,7 @@
   "displayName": "FeynQuest",
   "description": "Your Ai coding Assistant",
   "version": "0.1.0",
-  "publisher": "S.F.",
+  "publisher": "SF-24",
   "icon": "logo.png",
   "engines": {
     "vscode": "^1.75.0"
