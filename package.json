@@ -13,7 +13,7 @@
     "lint": "eslint ."
   },
   "activationEvents": [
-    "onCommand:feynquest.ask"
+    "*"
   ],
   "contributes": {
     "commands": [
