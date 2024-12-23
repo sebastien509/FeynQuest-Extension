@@ -12,7 +12,8 @@
   "scripts": {
     "lint": "eslint ."
   },
-  "activationEvents": ["*"],
+  "activationEvents": [
+  ],
   "contributes": {
     "commands": [
       {
