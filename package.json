@@ -1,14 +1,17 @@
 {
   "name": "feynquest-ext",
   "displayName": "FeynQuest",
-  "description": "Your AI coding assistant",
+  "description": "Your Ai coding Assistant",
   "version": "0.1.0",
-  "publisher": "S.F.",
+  "publisher": "SF-24",
   "icon": "logo.png",
   "engines": {
     "vscode": "^1.75.0"
   },
   "main": "./extension.js",
+  "scripts": {
+    "lint": "eslint ."
+  },
   "activationEvents": ["*"],
   "contributes": {
     "commands": [
@@ -32,5 +35,9 @@
   },
   "dependencies": {
     "openai": "^4.73.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sebastien509/FeynQuest-Extension"
   }
 }
