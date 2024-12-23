@@ -2,7 +2,7 @@
   "name": "feynquest-ext",
   "displayName": "FeynQuest",
   "description": "Your Ai coding Assistant",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "publisher": "SF-24",
   "icon": "logo.png",
   "engines": {
@@ -13,6 +13,7 @@
     "lint": "eslint ."
   },
   "activationEvents": [
+    "onCommand:feynquest.ask"
   ],
   "contributes": {
     "commands": [

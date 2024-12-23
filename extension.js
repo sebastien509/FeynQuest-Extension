@@ -76,6 +76,7 @@ async function showCodeSuggestions(suggestions) {
 
 // Register the command in VS Code
 function activate(context) {
+    console.log('Activating FeynQuest extension...');
     let disposable = vscode.commands.registerCommand('feynquest.ask', async () => {
         const editor = vscode.window.activeTextEditor;
         if (!editor) return; // Exit if no active editor
