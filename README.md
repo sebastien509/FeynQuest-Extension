@@ -1,85 +1,79 @@
-# FeynQuest VS Code Extension
+# FeynQuest - Your AI Coding Assistant  
 
-A powerful and intuitive VS Code extension i have built that integrates OpenAI's GPT-3.5-turbo model to provide intelligent code suggestions based on user comments and context.
+**FeynQuest** is a Visual Studio Code extension that transforms the way you code, offering AI-driven assistance directly within your favorite editor. Whether you need to generate code snippets, understand code better, or debug more effectively, FeynQuest has you covered.
+
+## Features  
+
+- **AI Code Generation**  
+  Get precise code suggestions for any task with natural language prompts.  
+
+- **Code Explanation**  
+  Paste or highlight code and get detailed, step-by-step explanations.  
+
+- **Debugging Assistance**  
+  Detect and fix bugs faster with AI-powered insights and suggestions.  
+
+- **Custom Keybindings**  
+  Execute commands with ease using user-defined shortcuts.  
+
+- **Integration with OpenAI API**  
+  Leverage the power of OpenAI's API (or others) for high-quality AI responses.  
 
 ---
 
-## Features
+## Installation  
 
-- Generates personalized code suggestions using OpenAI's API.
-- Suggests code snippets based on contextual lines and user input.
-- Inserts selected code snippets directly into the active editor.
-- Supports seamless integration into any VS Code workflow.
-
----
-
-## Requirements
-
-Before running the extension, ensure you have the following:
-
-- Node.js (v14.x or later) installed.
-- A valid OpenAI API key.
+1. Open **Visual Studio Code**.  
+2. Go to the Extensions view by clicking on the Extensions icon in the Activity Bar.  
+3. Search for "FeynQuest" and click **Install**.  
 
 ---
 
-## Installation
+## Usage  
 
-1. Clone this repository:
-   ```bash
-   git clone https://github.com/sebastien509/feynquest-ext.git
-Navigate to the project directory:
+1. Open the command palette in VS Code (`Ctrl+Shift+P` / `Cmd+Shift+P` on Mac).  
+2. Use the command `FeynQuest: Ask` to send a query to the AI.  
+3. Wait for a response to appear in the output or editor area.  
 
-bash
-Copy code
-cd feynquest-ext
-Install dependencies:
+### Example Commands  
 
-bash
-Copy code
-npm install
-Create a .env file in the root directory and add your OpenAI API key:
+- `FeynQuest: Ask` - Generate code or explanations.  
+- Custom keybindings can be configured in the extension settings.
 
-env
-Copy code
-OPENAI_API_KEY=your-api-key-here
-How to Run the Extension
-Open the project folder in Visual Studio Code:
+---
 
-bash
-Copy code
-code .
-Open the VS Code command palette (Ctrl+Shift+P or Cmd+Shift+P on Mac).
+## Configuration  
 
-## Select Run Extension.
+FeynQuest requires an API key to connect to OpenAI or similar AI services.  
 
-A new instance of VS Code will launch with the extension activated.
+1. Create a `.env` file in your workspace and add the following:  
+2. Reload the VS Code window to apply the configuration.  
 
-How to Test the Extension
-In the launched VS Code instance, open or create a .js file.
+---
 
-Write a comment on a new line (e.g., // How to create a fetch request in JavaScript?).
+## Keybindings  
 
-Use the command palette (Ctrl+Shift+P or Cmd+Shift+P) and run the command:
+Default keybinding:  
+- **`Ctrl+Alt+A`** (or customize in your VS Code settings).  
 
-## bash
+---
 
-Copy code
-FeynQuest: Ask
-Select a code suggestion from the provided list. The code snippet will be inserted under the cursor's current line.
+## Contributing  
 
-## Commands
+We welcome contributions! Please create a pull request or file an issue on our GitHub repository.  
 
-Command	Description
-npm install	Install dependencies.
-code .	Open the project in VS Code.
-npm run build	Build the extension for production (optional).
-FeynQuest: Ask	Trigger the extension in a VS Code editor.
-Contributing
-Feel free to contribute by:
+---
 
-## Forking the repository.
-Submitting pull requests with bug fixes or new features.
-License
-This project is licensed under the MIT License. See the LICENSE file for details.
+## Support  
 
+If you encounter any issues or have suggestions, feel free to contact us at **support@feynquest.com**.  
 
+---
+
+## License  
+
+This extension is licensed under the [MIT License](LICENSE).  
+
+---
+
+Start coding smarter and faster today with **FeynQuest**!
